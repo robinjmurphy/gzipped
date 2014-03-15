@@ -1,6 +1,8 @@
 # gzipped
 
-Calculates [gzip](http://en.wikipedia.org/wiki/Gzip) compression savings for plain text.
+[![Build Status](https://travis-ci.org/robinjmurphy/gzipped.png?branch=master)](https://travis-ci.org/robinjmurphy/gzipped) [![Code Climate](https://codeclimate.com/github/robinjmurphy/gzipped.png)](https://codeclimate.com/github/robinjmurphy/gzipped)
+
+> Calculates [gzip](http://en.wikipedia.org/wiki/Gzip) compression savings for plain text.
 
 ## Installation
 
