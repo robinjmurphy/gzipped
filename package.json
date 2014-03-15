@@ -1,6 +1,6 @@
 {
   "name": "gzipped",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line utility to calculate gzip compression savings",
   "main": "index.js",
   "bin": "bin/gzipped",
