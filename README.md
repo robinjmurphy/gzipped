@@ -1,6 +1,6 @@
 # gzipped
 
-[![Build Status](https://travis-ci.org/robinjmurphy/gzipped.png?branch=master)](https://travis-ci.org/robinjmurphy/gzipped) [![Code Climate](https://codeclimate.com/github/robinjmurphy/gzipped.png)](https://codeclimate.com/github/robinjmurphy/gzipped)
+[![Build Status](https://travis-ci.org/robinjmurphy/gzipped.png?branch=master)](https://travis-ci.org/robinjmurphy/gzipped) [![Code Climate](https://codeclimate.com/github/robinjmurphy/gzipped.png)](https://codeclimate.com/github/robinjmurphy/gzipped)[![NPM version](https://badge.fury.io/js/gzipped.png)](http://badge.fury.io/js/gzipped)
 
 > Calculates [gzip](http://en.wikipedia.org/wiki/Gzip) compression savings.
 
