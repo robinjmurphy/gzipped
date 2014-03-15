@@ -4,6 +4,7 @@
   "description": "Command line utility to calculate GZIP compression savings",
   "main": "index.js",
   "bin": "bin/gzipped",
+  "preferGlobal": true,
   "scripts": {
     "test": "make test"
   },
