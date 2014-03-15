@@ -13,8 +13,6 @@ program
 var filename = program.args[0];
 var stream = process.stdin;
 
-process.stdin.setEncoding('utf8');
-
 if (filename) {
   stream = fs.createReadStream(filename);
   stream.on('error', function (err) {
