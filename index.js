@@ -1,4 +1,3 @@
-var ReadableStream = require('stream').Readable;
 var zlib = require('zlib');
 
 function calculate(buffer, cb) {
