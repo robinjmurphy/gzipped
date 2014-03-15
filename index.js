@@ -1,23 +1,19 @@
 var ReadableStream = require('stream').Readable;
-var filesize = require('filesize');
-var colors = require('chalk');
 var zlib = require('zlib');
 
-function displayStats(original, compressed, ratio) {
-  console.log(colors.yellow('Original size:'), colors.green(filesize(original)));
-  console.log(colors.yellow('Compressed size:'), colors.green(filesize(compressed)));
-  console.log(colors.yellow('Compression ratio:'), colors.green((ratio * 100).toFixed(2) + '%'));
-}
-
-function calculate(buffer) {
+function calculate(buffer, cb) {
   var gzipped = zlib.gzip(buffer, function (err, gzipped) {
-    if (err) throw err;
+    if (err) return cb(err);
 
-    displayStats(buffer.length, gzipped.length, buffer.length / gzipped.length);
+    cb(null, {
+      original: buffer.length,
+      compressed: gzipped.length,
+      ratio: gzipped.length / buffer.length
+    });
   });
 }
 
-module.exports.calculate = function (stream) {
+module.exports.calculate = function (stream, cb) {
   var buffers = [];
 
   stream.on('data', function (data) {
@@ -25,6 +21,10 @@ module.exports.calculate = function (stream) {
   });
 
   stream.on('end', function () {
-    calculate(Buffer.concat(buffers));
+    calculate(Buffer.concat(buffers), cb);
+  });
+
+  stream.on('error', function (err) {
+    cb(err);
   });
 };

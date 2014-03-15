@@ -1,9 +1,11 @@
 #! /usr/bin/env node
 
 var program = require('commander');
+var colors = require('chalk');
+var filesize = require('filesize');
+var fs = require('fs');
 var app = require('..');
 var package = require('../package.json');
-var fs = require('fs');
 
 program
   .usage('<file ...>')
@@ -21,4 +23,9 @@ if (filename) {
   });
 }
 
-app.calculate(stream);
+app.calculate(stream, function(err, data) {
+    if (err) throw err;
+    console.log(colors.yellow('Original size:'), colors.green(filesize(data.original)));
+    console.log(colors.yellow('Compressed size:'), colors.green(filesize(data.compressed)));
+    console.log(colors.yellow('Compression ratio:'), colors.green((data.ratio * 100).toFixed(2) + '%'));
+});
