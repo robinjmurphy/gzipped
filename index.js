@@ -12,19 +12,19 @@ function displayStats(original, compressed, ratio) {
 function calculate(buffer) {
   var gzipped = zlib.gzip(buffer, function (err, gzipped) {
     if (err) throw err;
-    
+
     displayStats(buffer.length, gzipped.length, buffer.length / gzipped.length);
   });
 }
 
 module.exports.calculate = function (stream) {
-  var buffer = [];
+  var buffers = [];
 
   stream.on('data', function (data) {
-    buffer.push(data);
+    buffers.push(data);
   });
 
   stream.on('end', function () {
-    calculate(Buffer.concat(buffer));
+    calculate(Buffer.concat(buffers));
   });
 };
