@@ -1,7 +1,7 @@
 var zlib = require('zlib');
 
 function calculate(buffer, cb) {
-  var gzipped = zlib.gzip(buffer, function (err, gzipped) {
+  zlib.gzip(buffer, function (err, gzipped) {
     if (err) return cb(err);
 
     cb(null, {
