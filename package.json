@@ -1,6 +1,6 @@
 {
   "name": "gzipped",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Command line utility to calculate gzip compression savings",
   "main": "index.js",
   "bin": "bin/gzipped",
@@ -26,10 +26,10 @@
   "homepage": "https://github.com/robinjmurphy/gzipped",
   "dependencies": {
     "commander": "~2.1.0",
-    "filesize": "^2.0.3",
-    "chalk": "^0.4.0"
+    "filesize": "~2.0.3",
+    "chalk": "~0.4.0"
   },
   "devDependencies": {
-    "mocha": "^1.18.0"
+    "mocha": "~1.18.0"
   }
 }
