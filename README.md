@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/robinjmurphy/gzipped.png?branch=master)](https://travis-ci.org/robinjmurphy/gzipped) [![Code Climate](https://codeclimate.com/github/robinjmurphy/gzipped.png)](https://codeclimate.com/github/robinjmurphy/gzipped)
 
-> Calculates [gzip](http://en.wikipedia.org/wiki/Gzip) compression savings for plain text.
+> Calculates [gzip](http://en.wikipedia.org/wiki/Gzip) compression savings.
 
 ## Installation
 
@@ -23,6 +23,8 @@ Original size: 446 B
 Compressed size: 287 B
 Compression ratio: 64.35%
 ```
+
+You can pass in any type of file - it's not limited to plain text.
 
 #### Usage with `STDIN`
 
