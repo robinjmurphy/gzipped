@@ -1,0 +1,26 @@
+#! /usr/bin/env node
+
+var program = require('commander');
+var app = require('..');
+var package = require('../package.json');
+var fs = require('fs');
+
+program
+  .usage('<string>')
+  .version(package.version)
+  .parse(process.argv);
+
+var filename = program.args[0];
+var stream = process.stdin;
+
+process.stdin.setEncoding('utf8');
+
+if (filename) {
+  stream = fs.createReadStream(filename);
+  stream.on('error', function (err) {
+    console.error('Error reading file:', filename);
+    process.exit(1);
+  });
+}
+
+app.calculate(stream);
